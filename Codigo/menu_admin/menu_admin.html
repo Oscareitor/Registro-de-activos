@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menú Administrador</title>
+
+    <link rel="stylesheet" href="menu_admin.css">
+</head>
+
+<body>
+    <div class="linea-superior"></div>
+
+    <header class="header">
+        <div class="titulo-header">
+            <h1>Universidad San Juan de la Cruz</h1>
+            <p>Control de activos</p>
+        </div>
+
+        <div class="usuario-header">
+            <span class="nombre-usuario">
+                Administrador
+            </span>
+            <div class="separador"></div>
+
+            <button class="cerrar-sesion" type="button" onclick="window.location.href='../seleccion_inicio/seleccion_inicio.html'">
+                <img
+                    src="../seleccion_inicio/img/cerrar_sesion.png"
+                    alt="Cerrar sesión"
+                    class="icono-salir">
+                Cerrar sesión
+            </button>
+        </div>
+    </header>
+
+    <main class="contenido">
+        <section class="parte-superior">
+            <div class="informacion">
+                <h2>Inventario General</h2>
+                <p>
+                    Consulta y administra los activos de la institución.
+                </p>
+            </div>
+
+            <div class="botones">
+                <button
+                    class="boton-registrar"
+                    type="button">
+                    + Registrar Activo
+                </button>
+
+                <button
+                    class="boton-escanear"
+                    type="button">
+                    <img
+                        src="../seleccion_inicio/img/scanner.png"
+                        alt="Escáner"
+                        class="icono-escaner">
+                    Escanear Código
+                </button>
+            </div>
+        </section>
+        <div class="observaciones">
+            <strong>Observaciones:</strong>
+            No hay observaciones en este momento.
+        </div>
+    </main>
+</body>
+</html>

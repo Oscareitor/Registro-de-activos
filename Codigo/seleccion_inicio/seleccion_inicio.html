@@ -1,1 +1,27 @@
-<h1>Hello world</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de perfil</title>
+    <link rel="stylesheet" href="seleccion_inicio.css">
+</head>
+<body>
+    <div class="div_header">
+        <header class="header">
+            <h1 class="text_header">Sistema de Inventario Interno</h1>
+            <img class="logo" src="img/azul_usjc.png" alt="Logo de la universidad">
+        </header>
+    </div>
+
+    <main id="pantallaSeleccion" class="contenido">
+        <h2>Eliga que perfil eres</h2>
+        <img class="buho" src="img/buho.png" alt="buho">
+        <div class="opciones">
+            <button id="btnUsuario" class="boton-perfil" type="button" onclick="window.location.href='../loggin/login.html?perfil=usuario&version=3'">Usuario</button>
+            <button id="btnAdministrador" class="boton-perfil" type="button" onclick="window.location.href='../loggin/login.html?perfil=administrador&version=3'">Administrador</button>
+        </div>
+
+    </main>
+</body>
+</html>
