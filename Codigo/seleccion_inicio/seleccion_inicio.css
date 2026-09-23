@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b3f6b;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.div_header {
+    width: 100%;
+    background: #d4a62a;
+    border-bottom: 4px solid rgba(13, 27, 42, 0.75);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: 162px;
+    padding: 0 34px 0 36px;
+}
+
+.text_header {
+    margin: 0;
+    color: #0b2241;
+    font-size: clamp(1.8rem, 2.3vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    margin-left: 10px;
+    filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.22));
+}
+
+.contenido {
+    position: relative;
+    min-height: calc(100vh - 162px);
+    background: #022E60;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.contenido h2 {
+    margin: 0 0 60px;
+    color: #f5c12d;
+    font-size: clamp(2.4rem, 2.5vw, 4rem);
+    font-weight: 900;
+    text-align: center;
+}
+
+.opciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.boton-perfil {
+    width: min(60vw, 460px);
+    height: 80px;
+    border: none;
+    border-radius: 18px;
+    background: rgba(235, 235, 235, 0.86);
+    color: #1d1d1d;
+    font-size: clamp(2rem, 2vw, 3.5rem);
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.12);
+    position: relative;
+    z-index: 2;
+}
+
+.boton-perfil:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.boton-perfil:active {
+    transform: translateY(0);
+}
+
+.buho {
+    position: absolute;
+    right: -15px;
+    bottom: -1px;
+    width: min(30vw, 330px);
+    max-width: 330px;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+    display: block;
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.15));
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0 20px;
+        height: 130px;
+    }
+
+    .logo {
+        width: 90px;
+    }
+
+    .contenido {
+        padding-top: 40px;
+    }
+
+    .boton-perfil {
+        width: min(75vw, 480px);
+        height: 90px;
+    }
+
+    .buho {
+        width: min(42vw, 220px);
+        right: -8px;
+        bottom: 0;
+    }
+}

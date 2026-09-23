@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="div_header">
+        <header class="header">
+            <h1 class="text_header">Sistema de Inventario Interno</h1>
+            <img class="logo" src="../seleccion_inicio/img/azul_usjc.png" alt="Logo de la universidad">
+        </header>
+    </div>
+
+    <main id="pantallaSeleccion" class="contenido">
+        <img class="buho" src="../seleccion_inicio/img/buho.png" alt="Búho">
+        <form id="formularioLogin" class="opciones">
+            <div class="campo">
+                <label for="cedula">
+                    <h2>Ingrese su cédula</h2>
+                </label>
+
+                <input
+                    type="text"
+                    id="cedula"
+                    autocomplete="off"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="codigo">
+                    <h2>Ingrese su contraseña</h2>
+                </label>
+
+                <input
+                    type="password"
+                    id="codigo"
+                    required
+                >
+
+            </div>
+            <button
+                type="submit"
+                class="boton-entrar"
+
+            >
+                Entrar
+            </button>
+
+            <p id="mensajeLogin" role="alert" aria-live="polite"></p>
+        </form>
+        
+    </main>
+    <script>
+        const credenciales = {
+            usuario: {
+                cedula: '401580482',
+                codigo: 'usjc2026',
+                destino: '../menu_usuario/menu_usuario.html'
+            },
+            administrador: {
+                cedula: '119130541',
+                codigo: 'usjc2026',
+                destino: '../menu_admin/menu_admin.html'
+            }
+        };
+
+        const perfil = new URLSearchParams(window.location.search).get('perfil');
+        const formularioLogin = document.getElementById('formularioLogin');
+        const mensajeLogin = document.getElementById('mensajeLogin');
+
+        formularioLogin.addEventListener('submit', (evento) => {
+            evento.preventDefault();
+
+            const cedula = document.getElementById('cedula').value.replace(/\s/g, '');
+            const codigo = document.getElementById('codigo').value.trim();
+            const acceso = perfil
+                ? credenciales[perfil]
+                : Object.values(credenciales).find((credencial) =>
+                    credencial.cedula === cedula && credencial.codigo === codigo
+                );
+
+            if (acceso && acceso.cedula === cedula && acceso.codigo === codigo) {
+                window.location.href = acceso.destino;
+                return;
+            }
+
+            mensajeLogin.textContent = 'La cédula o la contraseña no son correctas.';
+        });
+    </script>
+</body>
+</html>
