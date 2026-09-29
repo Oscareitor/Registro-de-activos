@@ -7,8 +7,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
+            "name": "Abrir seleccion en localhost",
+            "url": "http://127.0.0.1:8000/app/seleccion_inicio/seleccion_inicio.html",
             "webRoot": "${workspaceFolder}"
         }
     ]

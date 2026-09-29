@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="div_header">
+        <header class="header">
+            <h1 class="text_header">Sistema de Inventario Interno</h1>
+            <img class="logo" src="../assets/img/azul_usjc.png" alt="Logo de la universidad">
+        </header>
+    </div>
+
+    <main id="pantallaSeleccion" class="contenido">
+        <img class="buho" src="../assets/img/buho.png" alt="Búho">
+        <form id="formularioLogin" class="opciones" method="post" action="login.php">
+            <div class="campo">
+                <label for="usuario">
+                    <h2>Ingrese su nombre de usuario o cédula</h2>
+                </label>
+
+                <input
+                    type="text"
+                    id="usuario"
+                    name="usuario"
+                    autocomplete="off"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="codigo">
+                    <h2>Ingrese su contraseña</h2>
+                </label>
+
+                <input
+                    type="password"
+                    id="codigo"
+                    name="codigo"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+            <button
+                type="submit"
+                class="boton-entrar"
+
+            >
+                Entrar
+            </button>
+
+            <p id="mensajeLogin" role="alert" aria-live="polite"></p>
+        </form>
+
+    </main>
+    <script>
+        const mensajeLogin = document.getElementById('mensajeLogin');
+        if (new URLSearchParams(window.location.search).has('error')) {
+            mensajeLogin.textContent = 'El nombre de usuario o la contraseña no son correctos.';
+        }
+    </script>
+</body>
+</html>
